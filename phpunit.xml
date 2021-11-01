@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.1/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         forceCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true">
+    <testsuites>
+        <testsuite name="unit">
+            <directory suffix=".php">tests/unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+
+    <listeners>
+        <listener class="Anubisthejackle\PHPUnit\Bootstrap\TestListener">
+            <arguments>
+                <string>unit</string>
+                <file>tests/bootstraps/unit-test-bootstrap.php</file>
+            </arguments>
+        </listener>
+        <listener class="Anubisthejackle\PHPUnit\Bootstrap\TestListener">
+            <arguments>
+                <string>integration</string>
+                <file>tests/bootstraps/integration-test-bootstrap.php</file>
+                <boolean>true</boolean>
+            </arguments>
+        </listener>
+    </listeners>
+</phpunit>

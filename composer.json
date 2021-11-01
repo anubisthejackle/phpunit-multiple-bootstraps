@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Anubisthejackle\\PhpunitMultipleBootstraps\\": "src/"
+            "Anubisthejackle\\PHPUnit\\Bootstrap\\": "src/"
         }
     },
     "authors": [
